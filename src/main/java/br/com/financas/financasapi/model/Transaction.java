@@ -8,11 +8,11 @@ import java.time.LocalDate;
 @Entity
 public class Transaction {
     private Long id;
-    private LocalDate data;
+    private LocalDate dateRegister;
     private Type type;
     private CostCenter costCenter;
-    private String descricao;
-    private Double valor;
+    private String description;
+    private Double value;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,45 +24,45 @@ public class Transaction {
         this.id = id;
     }
 
-    public LocalDate getData() {
-        return data;
+    public LocalDate getDate() {
+        return dateRegister;
     }
 
-    public void setData(LocalDate data) {
-        this.data = data;
+    public void setDate(LocalDate dateRegister) {
+        this.dateRegister = dateRegister;
     }
 
     @Enumerated(EnumType.STRING)
-    public Type getTipo() {
+    public Type getType() {
         return type;
     }
 
-    public void setTipo(Type type) {
+    public void setType(Type type) {
         this.type = type;
     }
 
     @ManyToOne
-    public CostCenter getCentroCusto() {
+    public CostCenter getCostCenter() {
         return costCenter;
     }
 
-    public void setCentroCusto(CostCenter costCenter) {
+    public void setCostCenter(CostCenter costCenter) {
         this.costCenter = costCenter;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setDescription(String descricao) {
+        this.description = description;
     }
 
-    public Double getValor() {
-        return valor;
+    public Double getValue() {
+        return value;
     }
 
-    public void setValor(Double valor) {
-        this.valor = valor;
+    public void setValue(Double valor) {
+        this.value = value;
     }
 }

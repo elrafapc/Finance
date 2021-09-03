@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class CostCenter {
     private Long id;
-    private String descricao;
+    private String description;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,11 +22,11 @@ public class CostCenter {
     }
 
     @NotNull
-    public String getDescricao() {
-        return descricao;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

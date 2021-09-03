@@ -19,15 +19,15 @@ public class CostCenterService {
     }
 
     public List<CostCenter> select(CostCenterFilter costCenterFilter) {
-        if (costCenterFilter.getDescricao() != null && !costCenterFilter.getDescricao().equals("")) {
-            return costCenterRepository.findAllByDescricaoContaining(costCenterFilter.getDescricao());
+        if (costCenterFilter.getDescription() != null && !costCenterFilter.getDescription().equals("")) {
+            return costCenterRepository.findAllByDescriptionContaining(costCenterFilter.getDescription());
         }
 
         return costCenterRepository.findAll();
     }
 
     public CostCenter selectById(Long id) {
-        return costCenterRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Erro: Não foi possivel encontrar o registro"));
+        return costCenterRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Error: Register was not found!"));
     }
 
     public CostCenter insert(CostCenter costCenter) {

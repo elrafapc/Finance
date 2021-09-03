@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface CostCenterRepository extends JpaRepository<CostCenter, Long> {
-    public List<CostCenter> findAllByDescricaoContaining(String descricao);
+    public List<CostCenter> findAllByDescriptionContaining(String description);
 }

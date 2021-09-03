@@ -1,13 +1,13 @@
 package br.com.financas.financasapi.model.centroCusto;
 
 public class CostCenterFilter {
-    private String descricao;
+    private String description;
 
-    public String getDescricao() {
-        return descricao;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setDescricao(String description) {
+        this.description = description;
     }
 }
