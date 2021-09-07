@@ -11,7 +11,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("centro-custos")
+@RequestMapping("cost-center")
 public class CostCenterResource {
 
     private final CostCenterService costCenterService;
