@@ -24,11 +24,11 @@ public class TransactionDTO {
     }
 
     public TransactionDTO(Transaction transaction) {
-        this.id = transaction.getId();
-        this.dateRegister = transaction.getDate();
-        this.description = transaction.getDescription();
-        this.value = transaction.getValue();
-        this.registerType = transaction.getCostCenter();
+       id = transaction.getId();
+       this.dateRegister = transaction.getDate();
+       this.description = transaction.getDescription();
+       this.value = transaction.getValue();
+       this.registerType = transaction.getCostCenter();
     }
 
     public Long getId() {

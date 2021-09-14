@@ -1,27 +1,30 @@
 package br.com.financas.financasapi.controller;
 
+import br.com.financas.financasapi.dto.TransactionDTO;
 import br.com.financas.financasapi.entities.Transaction;
 import br.com.financas.financasapi.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
-@RequestMapping("transaction")
+@RequestMapping(value = "transaction")
 public class TransactionResource {
 
-    private final TransactionService transactionService;
-
     @Autowired
-    public TransactionResource(TransactionService transactionService) {
-        this.transactionService = transactionService;
-    }
+    private TransactionService transactionService;
 
-    @GetMapping("{id}")
-    public Transaction selectById(@PathVariable Long id) {
-        return transactionService.selectById(id);
+    //@GetMapping("{id}")
+    //public Transaction selectById(@PathVariable Long id) {return transactionService.selectById(id);}
+
+    @GetMapping()
+    public ResponseEntity<List<TransactionDTO>> findAll(){
+        List<TransactionDTO> list = transactionService.findAll();
+        return ResponseEntity.ok(list);
     }
 
     @PostMapping
