@@ -1,12 +1,14 @@
-package br.com.financas.financasapi.model.costCenter;
+package br.com.financas.financasapi.entities.costCenter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import br.com.financas.financasapi.entities.Transaction;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
+@Table(name = "register_type")
 public class RegisterType {
     private Long id;
     private String description;

@@ -1,6 +1,6 @@
 package br.com.financas.financasapi.service;
 
-import br.com.financas.financasapi.model.User;
+import br.com.financas.financasapi.entities.User;
 import br.com.financas.financasapi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 

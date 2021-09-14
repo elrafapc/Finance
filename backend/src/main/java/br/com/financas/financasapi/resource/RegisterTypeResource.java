@@ -1,7 +1,7 @@
 package br.com.financas.financasapi.resource;
 
-import br.com.financas.financasapi.model.costCenter.RegisterType;
-import br.com.financas.financasapi.model.costCenter.RegisterTypeFilter;
+import br.com.financas.financasapi.entities.costCenter.RegisterType;
+import br.com.financas.financasapi.entities.costCenter.RegisterTypeFilter;
 import br.com.financas.financasapi.service.RegisterTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,11 +1,9 @@
-package br.com.financas.financasapi.model;
+package br.com.financas.financasapi.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "user")
 public class User {
 
     private Long id;

@@ -1,11 +1,12 @@
-package br.com.financas.financasapi.model;
+package br.com.financas.financasapi.entities;
 
-import br.com.financas.financasapi.model.costCenter.RegisterType;
+import br.com.financas.financasapi.entities.costCenter.RegisterType;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "transaction")
 public class Transaction {
     private Long id;
     private LocalDate dateRegister;
@@ -32,6 +33,7 @@ public class Transaction {
     }
 
     @ManyToOne
+    @JoinColumn(name = "register_type_id")
     public RegisterType getCostCenter() {
         return registerType;
     }

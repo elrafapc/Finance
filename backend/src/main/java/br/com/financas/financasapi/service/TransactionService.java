@@ -1,6 +1,6 @@
 package br.com.financas.financasapi.service;
 
-import br.com.financas.financasapi.model.Transaction;
+import br.com.financas.financasapi.entities.Transaction;
 import br.com.financas.financasapi.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
