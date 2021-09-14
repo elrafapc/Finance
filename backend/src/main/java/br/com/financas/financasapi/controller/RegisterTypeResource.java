@@ -1,4 +1,4 @@
-package br.com.financas.financasapi.resource;
+package br.com.financas.financasapi.controller;
 
 import br.com.financas.financasapi.entities.costCenter.RegisterType;
 import br.com.financas.financasapi.entities.costCenter.RegisterTypeFilter;

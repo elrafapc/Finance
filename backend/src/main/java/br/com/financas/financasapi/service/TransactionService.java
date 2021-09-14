@@ -9,12 +9,9 @@ import javax.persistence.EntityNotFoundException;
 
 @Service
 public class TransactionService {
-    private final TransactionRepository transactionRepository;
 
     @Autowired
-    public TransactionService(TransactionRepository transactionRepository) {
-        this.transactionRepository = transactionRepository;
-    }
+    private TransactionRepository transactionRepository;
 
     public Transaction selectById(Long id) {
         return transactionRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Error: Register was not found!"));

@@ -10,9 +10,10 @@ import java.time.LocalDate;
 public class Transaction {
     private Long id;
     private LocalDate dateRegister;
-    private RegisterType registerType;
     private String description;
     private Double value;
+
+    private RegisterType registerType;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,16 +33,6 @@ public class Transaction {
         this.dateRegister = dateRegister;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "register_type_id")
-    public RegisterType getCostCenter() {
-        return registerType;
-    }
-
-    public void setCostCenter(RegisterType registerType) {
-        this.registerType = registerType;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -58,4 +49,13 @@ public class Transaction {
         this.value = value;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "register_type_id")
+    public RegisterType getCostCenter() {
+        return registerType;
+    }
+
+    public void setCostCenter(RegisterType registerType) {
+        this.registerType = registerType;
+    }
 }

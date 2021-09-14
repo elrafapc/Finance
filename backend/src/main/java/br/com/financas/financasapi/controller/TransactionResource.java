@@ -1,4 +1,4 @@
-package br.com.financas.financasapi.resource;
+package br.com.financas.financasapi.controller;
 
 import br.com.financas.financasapi.entities.Transaction;
 import br.com.financas.financasapi.service.TransactionService;
