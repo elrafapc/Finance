@@ -13,6 +13,13 @@ public class RegisterType {
     private Long id;
     private String description;
 
+    public RegisterType(){}
+
+    public RegisterType(Long id, String description) {
+        this.id = id;
+        this.description = description;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long getId() {
@@ -23,7 +30,6 @@ public class RegisterType {
         this.id = id;
     }
 
-    @NotNull
     public String getDescription() {
         return description;
     }

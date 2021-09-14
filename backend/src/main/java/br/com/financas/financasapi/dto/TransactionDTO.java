@@ -7,28 +7,28 @@ import java.time.LocalDate;
 
 public class TransactionDTO {
     private Long id;
-    private LocalDate dateRegister;
     private String description;
     private Double value;
+    private LocalDate date;
 
     private RegisterType registerType;
 
     public TransactionDTO(){}
 
-    public TransactionDTO(Long id, LocalDate dateRegister, String description, Double value, RegisterType registerType) {
+    public TransactionDTO(Long id, String description, Double value, LocalDate date, RegisterType registerType) {
         this.id = id;
-        this.dateRegister = dateRegister;
         this.description = description;
         this.value = value;
+        this.date = date;
         this.registerType = registerType;
     }
 
     public TransactionDTO(Transaction transaction) {
-       id = transaction.getId();
-       this.dateRegister = transaction.getDate();
-       this.description = transaction.getDescription();
-       this.value = transaction.getValue();
-       this.registerType = transaction.getCostCenter();
+        this.id = transaction.getId();
+        this.description = transaction.getDescription();
+        this.value = transaction.getValue();
+        this.date = transaction.getDate();
+        this.registerType = transaction.getRegisterType();
     }
 
     public Long getId() {
@@ -37,14 +37,6 @@ public class TransactionDTO {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public LocalDate getDateRegister() {
-        return dateRegister;
-    }
-
-    public void setDateRegister(LocalDate dateRegister) {
-        this.dateRegister = dateRegister;
     }
 
     public String getDescription() {
@@ -61,6 +53,14 @@ public class TransactionDTO {
 
     public void setValue(Double value) {
         this.value = value;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
     public RegisterType getRegisterType() {

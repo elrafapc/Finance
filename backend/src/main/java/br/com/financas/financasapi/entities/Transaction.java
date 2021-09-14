@@ -9,9 +9,9 @@ import java.time.LocalDate;
 @Table(name = "transaction")
 public class Transaction {
     private Long id;
-    private LocalDate dateRegister;
     private String description;
     private Double value;
+    private LocalDate date;
 
     private RegisterType registerType;
 
@@ -25,19 +25,11 @@ public class Transaction {
         this.id = id;
     }
 
-    public LocalDate getDate() {
-        return dateRegister;
-    }
-
-    public void setDate(LocalDate dateRegister) {
-        this.dateRegister = dateRegister;
-    }
-
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String descricao) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
@@ -45,17 +37,25 @@ public class Transaction {
         return value;
     }
 
-    public void setValue(Double valor) {
+    public void setValue(Double value) {
         this.value = value;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
     @ManyToOne
     @JoinColumn(name = "register_type_id")
-    public RegisterType getCostCenter() {
+    public RegisterType getRegisterType() {
         return registerType;
     }
 
-    public void setCostCenter(RegisterType registerType) {
+    public void setRegisterType(RegisterType registerType) {
         this.registerType = registerType;
     }
 }
