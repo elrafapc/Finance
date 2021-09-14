@@ -1,7 +1,6 @@
 package br.com.financas.financasapi.resource;
 
 import br.com.financas.financasapi.model.Transaction;
-import br.com.financas.financasapi.model.centroCusto.CostCenter;
 import br.com.financas.financasapi.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

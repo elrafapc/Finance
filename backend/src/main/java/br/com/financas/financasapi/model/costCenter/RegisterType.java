@@ -1,4 +1,4 @@
-package br.com.financas.financasapi.model.centroCusto;
+package br.com.financas.financasapi.model.costCenter;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class CostCenter {
+public class RegisterType {
     private Long id;
     private String description;
 

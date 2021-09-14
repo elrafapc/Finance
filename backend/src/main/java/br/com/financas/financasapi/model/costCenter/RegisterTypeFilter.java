@@ -1,6 +1,6 @@
-package br.com.financas.financasapi.model.centroCusto;
+package br.com.financas.financasapi.model.costCenter;
 
-public class CostCenterFilter {
+public class RegisterTypeFilter {
     private String description;
 
     public String getDescription() {

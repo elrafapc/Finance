@@ -1,6 +1,6 @@
 package br.com.financas.financasapi.model;
 
-import br.com.financas.financasapi.model.centroCusto.CostCenter;
+import br.com.financas.financasapi.model.costCenter.RegisterType;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -9,8 +9,7 @@ import java.time.LocalDate;
 public class Transaction {
     private Long id;
     private LocalDate dateRegister;
-    private Type type;
-    private CostCenter costCenter;
+    private RegisterType registerType;
     private String description;
     private Double value;
 
@@ -32,22 +31,13 @@ public class Transaction {
         this.dateRegister = dateRegister;
     }
 
-    @Enumerated(EnumType.STRING)
-    public Type getType() {
-        return type;
-    }
-
-    public void setType(Type type) {
-        this.type = type;
-    }
-
     @ManyToOne
-    public CostCenter getCostCenter() {
-        return costCenter;
+    public RegisterType getCostCenter() {
+        return registerType;
     }
 
-    public void setCostCenter(CostCenter costCenter) {
-        this.costCenter = costCenter;
+    public void setCostCenter(RegisterType registerType) {
+        this.registerType = registerType;
     }
 
     public String getDescription() {
