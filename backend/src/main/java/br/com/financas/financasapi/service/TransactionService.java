@@ -2,6 +2,7 @@ package br.com.financas.financasapi.service;
 
 import br.com.financas.financasapi.dto.TransactionDTO;
 import br.com.financas.financasapi.entities.Transaction;
+import br.com.financas.financasapi.repository.RegisterTypeRepository;
 import br.com.financas.financasapi.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -19,9 +20,14 @@ public class TransactionService {
     @Autowired
     private TransactionRepository transactionRepository;
 
-    public List<TransactionDTO> findAll(){
-        List<Transaction> result = transactionRepository.findAll();
-        return result.stream().map(item -> new TransactionDTO(item)).collect(Collectors.toList());
+    @Autowired
+    private RegisterTypeRepository registerTypeRepository;
+
+    @Transactional(readOnly = true)
+    public Page<TransactionDTO> findAll(Pageable pageable){
+        registerTypeRepository.findAll();
+        Page<Transaction> result = transactionRepository.findAll(pageable);
+        return result.map(item -> new TransactionDTO(item));
     }
 
     public Transaction selectById(Long id) {

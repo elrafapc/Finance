@@ -4,6 +4,8 @@ import br.com.financas.financasapi.dto.TransactionDTO;
 import br.com.financas.financasapi.entities.Transaction;
 import br.com.financas.financasapi.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,8 +24,8 @@ public class TransactionController {
     //public Transaction selectById(@PathVariable Long id) {return transactionService.selectById(id);}
 
     @GetMapping()
-    public ResponseEntity<List<TransactionDTO>> findAll(){
-        List<TransactionDTO> list = transactionService.findAll();
+    public ResponseEntity<Page<TransactionDTO>> findAll(Pageable pageable){
+        Page<TransactionDTO> list = transactionService.findAll(pageable);
         return ResponseEntity.ok(list);
     }
 
