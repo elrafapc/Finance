@@ -13,7 +13,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("register-type")
+@RequestMapping("/register-type")
 public class RegisterTypeController {
 
     private final RegisterTypeService registerTypeService;
@@ -29,7 +29,7 @@ public class RegisterTypeController {
         return registerTypeService.select(registerTypeFilter);
     }
     */
-    
+
     @GetMapping()
     public ResponseEntity<List<RegisterTypeDTO>> findAll(){
         List<RegisterTypeDTO> list = registerTypeService.findAll();
@@ -51,5 +51,4 @@ public class RegisterTypeController {
     public void delete(@PathVariable Long id) {
         registerTypeService.delete(id);
     }
-
 }

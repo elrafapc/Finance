@@ -12,7 +12,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "transaction")
+@RequestMapping(value = "/transaction")
 public class TransactionController {
 
     @Autowired
