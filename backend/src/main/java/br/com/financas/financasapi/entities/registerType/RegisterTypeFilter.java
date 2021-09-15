@@ -1,4 +1,4 @@
-package br.com.financas.financasapi.entities.costCenter;
+package br.com.financas.financasapi.entities.registerType;
 
 public class RegisterTypeFilter {
     private String description;

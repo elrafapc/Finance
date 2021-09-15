@@ -1,6 +1,6 @@
 package br.com.financas.financasapi.entities;
 
-import br.com.financas.financasapi.entities.costCenter.RegisterType;
+import br.com.financas.financasapi.entities.registerType.RegisterType;
 
 import javax.persistence.*;
 import java.time.LocalDate;

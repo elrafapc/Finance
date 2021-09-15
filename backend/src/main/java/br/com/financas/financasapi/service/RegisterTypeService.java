@@ -1,8 +1,8 @@
 package br.com.financas.financasapi.service;
 
 import br.com.financas.financasapi.dto.RegisterTypeDTO;
-import br.com.financas.financasapi.entities.costCenter.RegisterType;
-import br.com.financas.financasapi.entities.costCenter.RegisterTypeFilter;
+import br.com.financas.financasapi.entities.registerType.RegisterType;
+import br.com.financas.financasapi.entities.registerType.RegisterTypeFilter;
 import br.com.financas.financasapi.repository.RegisterTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
 package br.com.financas.financasapi.dto;
 
-import br.com.financas.financasapi.entities.costCenter.RegisterTypeFilter;
+import br.com.financas.financasapi.entities.registerType.RegisterTypeFilter;
 
 public class RegisterTypeFilterDTO {
     private String description;

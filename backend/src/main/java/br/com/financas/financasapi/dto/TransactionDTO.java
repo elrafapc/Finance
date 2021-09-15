@@ -1,7 +1,6 @@
 package br.com.financas.financasapi.dto;
 
 import br.com.financas.financasapi.entities.Transaction;
-import br.com.financas.financasapi.entities.costCenter.RegisterType;
 
 import java.time.LocalDate;
 
@@ -11,11 +10,11 @@ public class TransactionDTO {
     private Double value;
     private LocalDate date;
 
-    private RegisterType registerType;
+    private RegisterTypeDTO registerType;
 
     public TransactionDTO(){}
 
-    public TransactionDTO(Long id, String description, Double value, LocalDate date, RegisterType registerType) {
+    public TransactionDTO(Long id, String description, Double value, LocalDate date, RegisterTypeDTO registerType) {
         this.id = id;
         this.description = description;
         this.value = value;
@@ -28,7 +27,7 @@ public class TransactionDTO {
         this.description = transaction.getDescription();
         this.value = transaction.getValue();
         this.date = transaction.getDate();
-        this.registerType = transaction.getRegisterType();
+        this.registerType = new RegisterTypeDTO(transaction.getRegisterType());
     }
 
     public Long getId() {
@@ -63,11 +62,11 @@ public class TransactionDTO {
         this.date = date;
     }
 
-    public RegisterType getRegisterType() {
+    public RegisterTypeDTO getRegisterType() {
         return registerType;
     }
 
-    public void setRegisterType(RegisterType registerType) {
+    public void setRegisterType(RegisterTypeDTO registerType) {
         this.registerType = registerType;
     }
 }

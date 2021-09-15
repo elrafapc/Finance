@@ -1,11 +1,6 @@
-package br.com.financas.financasapi.entities.costCenter;
-
-import br.com.financas.financasapi.entities.Transaction;
+package br.com.financas.financasapi.entities.registerType;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "register_type")

@@ -1,6 +1,6 @@
 package br.com.financas.financasapi.dto;
 
-import br.com.financas.financasapi.entities.costCenter.RegisterType;
+import br.com.financas.financasapi.entities.registerType.RegisterType;
 
 public class RegisterTypeDTO {
 
