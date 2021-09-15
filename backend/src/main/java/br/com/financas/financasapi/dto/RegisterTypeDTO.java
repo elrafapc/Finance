@@ -2,7 +2,9 @@ package br.com.financas.financasapi.dto;
 
 import br.com.financas.financasapi.entities.registerType.RegisterType;
 
-public class RegisterTypeDTO {
+import java.io.Serializable;
+
+public class RegisterTypeDTO implements Serializable {
 
     private Long id;
     private String description;

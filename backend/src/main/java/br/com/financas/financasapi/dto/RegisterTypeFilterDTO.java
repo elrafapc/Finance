@@ -2,7 +2,9 @@ package br.com.financas.financasapi.dto;
 
 import br.com.financas.financasapi.entities.registerType.RegisterTypeFilter;
 
-public class RegisterTypeFilterDTO {
+import java.io.Serializable;
+
+public class RegisterTypeFilterDTO implements Serializable {
     private String description;
 
     public RegisterTypeFilterDTO(){}

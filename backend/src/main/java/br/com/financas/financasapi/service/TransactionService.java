@@ -1,6 +1,7 @@
 package br.com.financas.financasapi.service;
 
 import br.com.financas.financasapi.dto.TransactionDTO;
+import br.com.financas.financasapi.dto.TransactionSumDTO;
 import br.com.financas.financasapi.entities.Transaction;
 import br.com.financas.financasapi.repository.RegisterTypeRepository;
 import br.com.financas.financasapi.repository.TransactionRepository;
@@ -28,6 +29,11 @@ public class TransactionService {
         registerTypeRepository.findAll();
         Page<Transaction> result = transactionRepository.findAll(pageable);
         return result.map(item -> new TransactionDTO(item));
+    }
+
+    @Transactional(readOnly = true)
+    public List<TransactionSumDTO> amountGroupedByType(){
+        return transactionRepository.amountGroupedByType();
     }
 
     public Transaction selectById(Long id) {

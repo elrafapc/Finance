@@ -2,9 +2,10 @@ package br.com.financas.financasapi.dto;
 
 import br.com.financas.financasapi.entities.Transaction;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class TransactionDTO {
+public class TransactionDTO implements Serializable {
     private Long id;
     private String description;
     private Double value;

@@ -1,6 +1,7 @@
 package br.com.financas.financasapi.controller;
 
 import br.com.financas.financasapi.dto.TransactionDTO;
+import br.com.financas.financasapi.dto.TransactionSumDTO;
 import br.com.financas.financasapi.entities.Transaction;
 import br.com.financas.financasapi.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,12 +21,18 @@ public class TransactionController {
     @Autowired
     private TransactionService transactionService;
 
-    //@GetMapping("{id}")
-    //public Transaction selectById(@PathVariable Long id) {return transactionService.selectById(id);}
-
     @GetMapping()
     public ResponseEntity<Page<TransactionDTO>> findAll(Pageable pageable){
         Page<TransactionDTO> list = transactionService.findAll(pageable);
+        return ResponseEntity.ok(list);
+    }
+
+    //@GetMapping("{id}")
+    //public Transaction selectById(@PathVariable Long id) {return transactionService.selectById(id);}
+
+    @GetMapping(value = "/sum_by_type")
+    public ResponseEntity<List<TransactionSumDTO>> amountGroupedByType(){
+        List<TransactionSumDTO> list = transactionService.amountGroupedByType();
         return ResponseEntity.ok(list);
     }
 
