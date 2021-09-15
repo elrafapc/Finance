@@ -1,4 +1,4 @@
-INSERT INTO user(login,password) VALUES ('rafael', '12345');
+INSERT INTO user_system(login,password) VALUES ('rafael', '12345');
 
 INSERT INTO register_type(description) VALUES ('Entrada de Valor');
 INSERT INTO register_type(description) VALUES ('Benefício');

@@ -3,7 +3,7 @@ package br.com.financas.financasapi.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "user_system")
 public class User {
 
     private Long id;

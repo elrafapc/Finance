@@ -16,7 +16,4 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
             "FROM Transaction AS obj " +
             "GROUP BY obj.registerType")
     List<TransactionSumDTO> amountGroupedByType();
-
-
-
 }
