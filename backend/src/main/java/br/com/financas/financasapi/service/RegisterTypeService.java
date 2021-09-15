@@ -1,5 +1,6 @@
 package br.com.financas.financasapi.service;
 
+import br.com.financas.financasapi.dto.RegisterTypeDTO;
 import br.com.financas.financasapi.entities.costCenter.RegisterType;
 import br.com.financas.financasapi.entities.costCenter.RegisterTypeFilter;
 import br.com.financas.financasapi.repository.RegisterTypeRepository;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class RegisterTypeService {
@@ -16,6 +18,11 @@ public class RegisterTypeService {
     @Autowired
     public RegisterTypeService(RegisterTypeRepository registerTypeRepository) {
         this.registerTypeRepository = registerTypeRepository;
+    }
+
+    public List<RegisterTypeDTO> findAll(){
+        List<RegisterType> result = registerTypeRepository.findAll();
+        return result.stream().map(item -> new RegisterTypeDTO(item)).collect(Collectors.toList());
     }
 
     public List<RegisterType> select(RegisterTypeFilter registerTypeFilter) {

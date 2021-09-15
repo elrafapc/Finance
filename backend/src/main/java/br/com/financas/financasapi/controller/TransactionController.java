@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "transaction")
-public class TransactionResource {
+public class TransactionController {
 
     @Autowired
     private TransactionService transactionService;
