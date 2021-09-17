@@ -11,8 +11,8 @@ export type Transaction = {
 export type TransactionPage = {
     content?: Transaction[];
     last: boolean;
-    totalPages: number;
     totalElements: number;
+    totalPages: number;
     size?: number;
     number: number;
     first: boolean;

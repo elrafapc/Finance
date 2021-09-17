@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { TransactionPage } from "types/transaction";
 import { BASE_URL } from "utils/requests";
 import { formatLocalDate } from "utils/format";
+import Pagination from "components/Pagination";
 
 const DataTable = () => {
 
@@ -24,28 +25,31 @@ const DataTable = () => {
     }, [])
 
     return (
-        <div className="table-responsive">
-            <table className="table table-striped table-sm">
-                <thead>
-                    <tr>
-                        <th>Descrição</th>
-                        <th>Tipo de Registro</th>
-                        <th>Valor</th>
-                        <th>Data</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {page.content?.map(item => (
-                        <tr key={item.id}>
-                            <td>{item.description}</td>
-                            <td>{item.registerType.description}</td>
-                            <td>{item.value}</td>
-                            <td>{formatLocalDate(item.date, "dd/MM/yyyy")}</td>
+        <>
+            <div className="table-responsive">
+                <table className="table table-striped table-sm">
+                    <thead>
+                        <tr>
+                            <th>Descrição</th>
+                            <th>Tipo de Registro</th>
+                            <th>Valor</th>
+                            <th>Data</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
+                    </thead>
+                    <tbody>
+                        {page.content?.map(item => (
+                            <tr key={item.id}>
+                                <td>{item.description}</td>
+                                <td>{item.registerType.description}</td>
+                                <td>{item.value}</td>
+                                <td>{formatLocalDate(item.date, "dd/MM/yyyy")}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+            
+        </>
     );
 }
 
