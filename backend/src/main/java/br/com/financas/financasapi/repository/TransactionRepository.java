@@ -1,5 +1,6 @@
 package br.com.financas.financasapi.repository;
 
+import br.com.financas.financasapi.dto.TransactionSpendByMonthDTO;
 import br.com.financas.financasapi.dto.TransactionSumDTO;
 import br.com.financas.financasapi.entities.Transaction;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,4 +17,10 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
             "FROM Transaction AS obj " +
             "GROUP BY obj.registerType")
     List<TransactionSumDTO> amountGroupedByType();
+
+    @Query("SELECT new br.com.financas.financasapi.dto.TransactionSpendByMonthDTO(obj.date, SUM(obj.value)) " +
+            "FROM Transaction AS obj " +
+            "WHERE obj.registerType <> 1 AND obj.registerType <> 2 " +
+            "GROUP BY MONTH(obj.date)")
+    List<TransactionSpendByMonthDTO> totalSpendByMonth();
 }

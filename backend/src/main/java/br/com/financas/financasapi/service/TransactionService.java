@@ -1,6 +1,7 @@
 package br.com.financas.financasapi.service;
 
 import br.com.financas.financasapi.dto.TransactionDTO;
+import br.com.financas.financasapi.dto.TransactionSpendByMonthDTO;
 import br.com.financas.financasapi.dto.TransactionSumDTO;
 import br.com.financas.financasapi.entities.Transaction;
 import br.com.financas.financasapi.repository.RegisterTypeRepository;
@@ -39,6 +40,9 @@ public class TransactionService {
     public Transaction selectById(Long id) {
         return transactionRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Error: Register was not found!"));
     }
+
+    @Transactional(readOnly = true)
+    public List<TransactionSpendByMonthDTO> totalSpendByMonth(){return transactionRepository.totalSpendByMonth();}
 
     public Transaction insert(Transaction transaction) {
         return transactionRepository.save(transaction);

@@ -1,6 +1,7 @@
 package br.com.financas.financasapi.controller;
 
 import br.com.financas.financasapi.dto.TransactionDTO;
+import br.com.financas.financasapi.dto.TransactionSpendByMonthDTO;
 import br.com.financas.financasapi.dto.TransactionSumDTO;
 import br.com.financas.financasapi.entities.Transaction;
 import br.com.financas.financasapi.service.TransactionService;
@@ -33,6 +34,12 @@ public class TransactionController {
     @GetMapping(value = "/sum_by_type")
     public ResponseEntity<List<TransactionSumDTO>> amountGroupedByType(){
         List<TransactionSumDTO> list = transactionService.amountGroupedByType();
+        return ResponseEntity.ok(list);
+    }
+
+    @GetMapping(value = "/total_Spend")
+    public ResponseEntity<List<TransactionSpendByMonthDTO>> totalSpendByMonth(){
+        List<TransactionSpendByMonthDTO> list = transactionService.totalSpendByMonth();
         return ResponseEntity.ok(list);
     }
 
