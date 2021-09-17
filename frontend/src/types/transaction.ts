@@ -24,3 +24,8 @@ export type TransactionSum = {
     typeName: string,
     sum: number
 }
+
+export type TransactionSpendByMonth = {
+    date: string;
+    total: number;
+}
