@@ -15,6 +15,7 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
 
     @Query("SELECT new br.com.financas.financasapi.dto.TransactionSumDTO(obj.registerType, SUM(obj.value)) " +
             "FROM Transaction AS obj " +
+            "WHERE obj.registerType <> 1 AND obj.registerType <> 2 " +
             "GROUP BY obj.registerType")
     List<TransactionSumDTO> amountGroupedByType();
 
