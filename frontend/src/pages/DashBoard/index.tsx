@@ -10,16 +10,16 @@ const Dashboard = () => {
         <div>
             <>
                 <NavBar />
-
                 <div className="container">
                     <h1 className="text-primary py-3"> Dashboard de Receitas e Despesas</h1>
-                    <div>
-                        <Link className="btn btn-primary btn-lg" to="/transaction">
+
+                    <div className="container">
+                        <Link className="btn btn-secondary " to="/transaction">
                             Lançar Registros
                         </Link>
                     </div>
-                    
-                    <div className="row px-3">
+
+                    <div className="row px-3" >
                         <div className="col-sm-6">
                             <h5 className="text-center text-secondary">Total de Gastos por Mês</h5>
                             <BarCharts />

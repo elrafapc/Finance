@@ -1,8 +1,12 @@
 package br.com.financas.financasapi.entities.registerType;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 import javax.persistence.*;
 
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@JsonTypeInfo(use = JsonTypeInfo.Id.MINIMAL_CLASS, property = "className", visible = true)
 @Table(name = "register_type")
 public class RegisterType {
     private Long id;
