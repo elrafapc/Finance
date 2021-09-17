@@ -8,10 +8,10 @@ const Home = () => {
             <NavBar />
             <div className="container">
                 <div className="jumbotron">
-                    <h1 className="display-4">DSVendas</h1>
-                    <p className="lead">Analise o desempenho das suas vendas por diferentes perspectivas</p>
+                    <h1 className="display-4">Controle de Finanças</h1>
+                    <p className="lead">Controle suas receitas e despesas de maneira simples.</p>
                     <hr />
-                    <p>Esta aplicação consiste em exibir um dashboard a partir de dados fornecidos por um back end construído com Spring Boot.</p>
+                    <p>Vizualize seus gastos em gráficos dinâmicos e intuitivos..</p>
                     <Link className="btn btn-primary btn-lg" to ="/dashboard">
                         Acessar Dashboard
                     </Link>
