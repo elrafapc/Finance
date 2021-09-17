@@ -1,24 +1,48 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { TransactionPage } from "types/transaction";
+import { BASE_URL } from "utils/requests";
+import { formatLocalDate } from "utils/format";
+
 const DataTable = () => {
+
+
+
+    const [page, setPage] = useState<TransactionPage>({
+        first: true,
+        last: true,
+        number: 0,
+        totalElements: 0,
+        totalPages: 0
+    })
+
+    useEffect(() => {
+        axios.get(`${BASE_URL}/transaction?page=0&size=10&sort=registerType.id`)
+            .then(Response => {
+                setPage(Response.data);
+            })
+    }, [])
+
     return (
         <div className="table-responsive">
             <table className="table table-striped table-sm">
                 <thead>
                     <tr>
-                        <th>Data</th>
-                        <th>Vendedor</th>
-                        <th>Clientes visitados</th>
-                        <th>Negócios fechados</th>
+                        <th>Descrição</th>
+                        <th>Tipo de Registro</th>
                         <th>Valor</th>
+                        <th>Data</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>22/04/2021</td>
-                        <td>Barry Allen</td>
-                        <td>34</td>
-                        <td>25</td>
-                        <td>15017.00</td>
-                    </tr>
+                    {page.content?.map(item => (
+                        <tr key={item.id}>
+                            <td>{item.description}</td>
+                            <td>{item.registerType.description}</td>
+                            <td>{item.value}</td>
+                            <td>{formatLocalDate(item.date, "dd/MM/yyyy")}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>
