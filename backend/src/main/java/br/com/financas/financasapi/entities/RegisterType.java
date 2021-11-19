@@ -1,4 +1,4 @@
-package br.com.financas.financasapi.entities.registerType;
+package br.com.financas.financasapi.entities;
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
@@ -9,6 +9,7 @@ import javax.persistence.*;
 @JsonTypeInfo(use = JsonTypeInfo.Id.MINIMAL_CLASS, property = "className", visible = true)
 @Table(name = "register_type")
 public class RegisterType {
+
     private Long id;
     private String description;
 

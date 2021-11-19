@@ -1,6 +1,6 @@
 package br.com.financas.financasapi.repository;
 
-import br.com.financas.financasapi.entities.registerType.RegisterType;
+import br.com.financas.financasapi.entities.RegisterType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

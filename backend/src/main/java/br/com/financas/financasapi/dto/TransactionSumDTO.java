@@ -1,6 +1,6 @@
 package br.com.financas.financasapi.dto;
 
-import br.com.financas.financasapi.entities.registerType.RegisterType;
+import br.com.financas.financasapi.entities.RegisterType;
 
 import java.io.Serializable;
 

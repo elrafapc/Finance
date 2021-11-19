@@ -1,7 +1,7 @@
 package br.com.financas.financasapi.controller;
 
 import br.com.financas.financasapi.dto.RegisterTypeDTO;
-import br.com.financas.financasapi.entities.registerType.RegisterType;
+import br.com.financas.financasapi.entities.RegisterType;
 import br.com.financas.financasapi.service.RegisterTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
